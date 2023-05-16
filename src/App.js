@@ -1,5 +1,8 @@
 import React from 'react';
+import CategoryDirectory from './components/category-directory/category-directory.component';
+
 import './categories.styles.scss'
+
 
 
 
@@ -33,22 +36,8 @@ const categories = [
   }
 ]
 
-  return (
-    <div className="categories-container">
-      {categories.map(({ title, id, imageUrl }) => (
-        <div key={id} className="category-container">
-        <div className="background-image" style={{
-          backgroundImage: `url(${imageUrl})`
-        }}/>
-        <div className="category-body-container">
-          <h2>{title}</h2>
-          <p>Shop Now</p>
-        </div>
-      </div>
-      ))}
-    
-    </div>
-  );
-}
+  return <CategoryDirectory categories={categories} />;
+  
+};
 
 export default App;
