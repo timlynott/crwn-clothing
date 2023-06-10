@@ -6,8 +6,10 @@ import App from './App';
 import { UserProvider } from './contexts/user.context';
 import {CartProvider} from './contexts/cart.context';
 import reportWebVitals from './reportWebVitals';
+import {CategoriesProvider} from './contexts/categories.context';
 import './index.scss';
-import { CategoriesProvider } from './contexts/categories.context';
+
+
 
 
 
@@ -17,11 +19,12 @@ root.render(
     <BrowserRouter>
       <UserProvider>
         <CategoriesProvider>
-          <CartProvider>
-
+            <CartProvider>
+            
               <App /> 
-          </CartProvider >    
-        </CategoriesProvider>
+           
+            </CartProvider >   
+          </CategoriesProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>
