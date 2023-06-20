@@ -1,10 +1,11 @@
-export const USER_ACTION_TYPES = {
-    SET_CURRENT_USER: "SET_CURRENT_USER",
+import {USER_ACTION_TYPES} from './user.types';
+
+const INITIAL_STATE = {
+    currentUser: null,
 };
 
 export const userReducer = (state = INITIAL_STATE, action) => {
-    console.log(action);
-    console.log('dispatched');
+
     const {type, payload} = action;
     switch (type) {
         case USER_ACTION_TYPES.SET_CURRENT_USER:
@@ -13,10 +14,7 @@ export const userReducer = (state = INITIAL_STATE, action) => {
                 currentUser: payload,
             };
         default:
-            throw new Error(`Unknown action type ${type} in userReducer`);
+            return state;
 }
 };
 
-const INITIAL_STATE = {
-    currentUser: null,
-};
